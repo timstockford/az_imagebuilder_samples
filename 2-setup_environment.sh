@@ -29,13 +29,13 @@ location=westeurope
 
 # name of the Image Builder template name to use
 # nb. without .json e.g. "aibTemplateSIGWin"
-aibTemplateName=aibTemplateSIGWinStd
+aibTemplateName=aibTemplateSIGWinSample
 
 # name of the shared image gallery, e.g. myCorpGallery
 sigName=${deployenv}_vmImageLibrary
 
 # name of the image definition to be created, e.g. ProdImages
-imageDefName=win2019std
+imageDefName=win2019sample
 
 # name of the image to be created
 # imageName=aibCustomImgWini01

@@ -3,9 +3,9 @@
 aibTemplateFullName=${aibTemplateName}.json
 
 aibDate=$(date +'%d-%m-%Y')
-# download the example and configure it with your vars
-# curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/10_Creating_a_Custom_Windows_Managed_Image/helloImageTemplateWin.json -o helloImageTemplateWin.json
-templateurl=https://raw.githubusercontent.com/timstockford/az_imagebuilder_samples/master/samples/3_Create_DevOps_With_Custom_Template/templates/$aibTemplateFullName
+# JSON AIB Template published location
+# ** must be available at runtime, so don't forget to commit & push any template changes first!
+templateurl=https://raw.githubusercontent.com/timstockford/az_imagebuilder_templates/master/templates/$aibTemplateFullName
 curl $templateurl -o $USR_TMPDIR/$aibTemplateFullName
 
 
