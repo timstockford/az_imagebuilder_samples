@@ -31,7 +31,7 @@ az role assignment create \
 
 
 # staging storage account
-stagingStorageAcc=aibstagstor$(date +'%s')
+#stagingStorageAcc=aibstagstor$(date +'%s')
 
-logc create storage account and blob in resource group
-az storage account create -n $stagingStorageAcc -g $aibResourceGroup -l $location --sku Standard_LRS
+#logc create storage account and blob in resource group
+#az storage account create -n $stagingStorageAcc -g $aibResourceGroup -l $location --sku Standard_LRS

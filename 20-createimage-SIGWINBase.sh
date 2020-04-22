@@ -1,3 +1,9 @@
+#
+# SCRIPT REQUIRES DEPENDANT RESOURCES HAVE ALREADY BEEN CREATED
+# 
+# CLONE THIS SCRIPT AND CUSTOMISE TO CREATE IMAGES FROM OTHER AIB TEMPLATES
+#
+
 
 # set your subscription (nb. defaults to current active subscription)
 az account list -o table
@@ -29,16 +35,16 @@ location=westeurope
 
 # name of the Image Builder template name to use
 # nb. without .json e.g. "aibTemplateSIGWin"
-aibTemplateName=aibTemplateSIGWin
+aibTemplateName=aibTemplateSIGWinBase
 
 # name of the shared image gallery, e.g. myCorpGallery
 sigName=${deployenv}_vmImageLibrary
 
 # name of the image definition to be created, e.g. ProdImages
-imageDefName=win2019std
+imageDefName=win2019stdBase
 
 # name of the image to be created
-imageName=aibCustomImgWini01
+# imageName=aibCustomImgWini01
 
 # image distribution metadata reference name
 runOutputName=${imageDefName}ro
