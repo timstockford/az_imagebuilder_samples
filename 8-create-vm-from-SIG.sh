@@ -2,7 +2,7 @@
 image="/subscriptions/$subscriptionID/resourceGroups/$aibResourceGroup/providers/Microsoft.Compute/galleries/$sigName/images/$imageDefName/versions/latest"
 
 # generate vm name & password
-vmName=$imageDefName$((100 + RANDOM % 999))
+vmName=$imageDefName$((10 + RANDOM % 99))
 vmpassword="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20)"
 vmuser=azureaibuser
 

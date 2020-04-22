@@ -34,6 +34,11 @@ aibTemplateName=aibTemplateSIGWinSample
 # name of the shared image gallery, e.g. myCorpGallery
 sigName=${deployenv}_vmImageLibrary
 
+# Set image definition marketplace properties
+ imageDefPublisher=HomeITWindowsServer
+ imageDefOffer=2019-Datacenter
+ imageDefSku=Sample
+
 # name of the image definition to be created, e.g. ProdImages
 imageDefName=win2019sample
 
