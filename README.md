@@ -27,7 +27,7 @@ Custom learning....
 ## Quick Start notes
 - Run code in Bash cloudshell
 - Run each script in number order
-- Using **2017-training** subscription: 51efccaf-6cf9-48be-b56e-67feab10aa68
+- Using training subscription
   - Nb. Image Builder providers already registered in this subscription
 
 
