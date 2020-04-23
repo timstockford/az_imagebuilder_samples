@@ -10,8 +10,10 @@ It is based on the samples published at [@danielsollondon/azvmimagebuilder](http
 - [Azure ImageBuilder (AIB) Templates](#azure-imagebuilder-aib-templates)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
+    - [Image Template Index](#image-template-index)
     - [Installing](#installing)
     - [Updating the scripts for your environment](#updating-the-scripts-for-your-environment)
+  - [Script explaination](#script-explaination)
   - [Contributing](#contributing)
   - [License](#license)
   - [Related Links](#related-links)
@@ -26,6 +28,7 @@ All the scripts in this Repo are Bash Shell scripts, and can be run in Azure Clo
 
 Note: The URL's to the Image Builder JSON templates are hardcoded to my repo, so make sure you modify the following scripts to point to your own repo:
 
+### Image Template Index
 
 ### Installing
 
@@ -73,6 +76,9 @@ templateurl=https://raw.githubusercontent.com/timstockford/az_imagebuilder_templ
 vmName=$imageDefName$((10 + RANDOM % 99))
 ```
 
+## Script explaination
+
+
 ## Contributing
 
 Please feel free to raise an issue on Github if you have any corrections or suggested improvements, or alternatively submit a pull request with your updates.
@@ -97,5 +103,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.
 
 * [@danielsollondon](https://github.com/danielsollondon) - For his great documentation and working examples for Azure Image Builder
 * [@PurpleBooth](https://gist.github.com/PurpleBooth) for the [README.md Template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* Hat tip to anyone whose code was used
-* etc
+* TOC generated using [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) vscode extension 
