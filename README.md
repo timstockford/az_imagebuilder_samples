@@ -1,33 +1,79 @@
-# Azure VM Image Builder - Learning
-Repo for code related to learning AIB
+# Azure ImageBuilder (AIB) Templates
 
-Custom learning.... 
+This project extends the basic samples provided in the AIB documentation with a variety of Azure Image Builder templates.
 
-
-# Milestone 3 - Use AIB via DevOps with a custom Image Template
-- Manually Create custom AIB template definition and publish to new Resource Group
-- Manually create custom image
-- Manually provision VM from template to prove it works
-- Add customisations to template:
-  - Add BGInfo extension
-  - Set Environment Variable to match Image version & definition used(? Or avail in AZ VM Portal?) 
-  - Add Chocolatey
-  - Add a software package?
-    - (e.g. NotepadPlusPlus From Choco)
-    - Azure DevOps Agent (PreConfigured)
-- Use custom template in Devops pipeline
-- Add Devops task to automatically create AIM Template first
+The scripts included in this project (when executed in order) should setup the necessary pre-requisities within Azure and deploy the necessary resources to build your template images.
 
 
-- [Azure VM Image Builder - Learning](#azure-vm-image-builder---learning)
-- [Milestone 3 - Use AIB via DevOps with a custom Image Template](#milestone-3---use-aib-via-devops-with-a-custom-image-template)
-  - [Quick Start notes](#quick-start-notes)
+It is based on the samples published at [@danielsollondon/azvmimagebuilder](https://github.com/danielsollondon/azvmimagebuilder)
+
+- [Azure ImageBuilder (AIB) Templates](#azure-imagebuilder-aib-templates)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installing](#installing)
+    - [Updating the scripts for your environment](#updating-the-scripts-for-your-environment)
+      - [Subscription to be used](#subscription-to-be-used)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Related Links](#related-links)
+    - [You Tube Videos](#you-tube-videos)
+  - [Acknowledgments](#acknowledgments)
+
+## Getting Started
+
+### Prerequisites
+
+All the scripts in this Repo are Bash Shell scripts, and can be run in Azure Cloud Shell or run on your linux distro.
+
+Note: The URL's to the Image Builder JSON templates are hardcoded to my repo, so make sure you modify the following scripts to point to your own repo:
 
 
-## Quick Start notes
-- Run code in Bash cloudshell
-- Run each script in number order
-- Using training subscription
-  - Nb. Image Builder providers already registered in this subscription
+### Installing
+
+To use the scripts, just clone the git repo locally.
+You can do this many ways, but I personally use git desktop
+
+If you want to use these scripts on Azure cloud shell, as Git is installed by default, you can use the following command to clone the scripts to your clouddrive:
+
+```
+git clone https://github.com/timstockford/az_imagebuilder_templates ~/clouddrive/az_imagebuilder_templates
+
+```
+nb. cloned to "clouddrive" to ensure persistence of files between sessions, and for easier file manageda bility through Azure Portal.
+
+See [Persist files in Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/persisting-shell-storage) for furhter information.
 
 
+### Updating the scripts for your environment
+
+Once you have cloned the scripts, they should work as-is.  However you may wish to make the following customisations:
+
+#### Subscription to be used
+Modify (1-register_image_builder.sh) & (2-setup_environment.sh)
+
+## Contributing
+
+Please feel free to raise an issue on Github if you have any corrections or suggested improvements, or alternatively submit a pull request with your updates.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details
+
+## Related Links
+
+- Azure Docs: https://aka.ms/azvmimagebuilder
+- Quick Starts: https://aka.ms/azvmimagebuilderdemos
+- End to End Solutions with Image Builder: https://aka.ms/azvmimagebuildersolns
+- Feedback: https://aka.ms/aibfeedback
+
+### You Tube Videos
+- [Introduction to the Azure VM Image Builder](https://youtu.be/nalr2rHRDew)
+- [Create a Custom VM Image Pipeline with Azure VM Image Builder and Azure DevOps](https://youtu.be/lqIA0VHe5Do)
+
+
+## Acknowledgments
+
+* [@danielsollondon](https://github.com/danielsollondon) - For his great documentation and working examples for Azure Image Builder
+* [@PurpleBooth](https://gist.github.com/PurpleBooth) for the [README.md Template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* Hat tip to anyone whose code was used
+* etc
