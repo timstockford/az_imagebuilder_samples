@@ -49,7 +49,14 @@ See [Persist files in Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/
 Once you have cloned the scripts, they should work as-is.  However you may wish to make the following customisations:
 
 #### Subscription to be used
-Modify [](1-register_image_builder.sh) & [](2-setup_environment.sh)
+
+Modify [1-register_image_builder.sh](1-register_image_builder.sh) & [2-setup_environment.sh](2-setup_environment.sh) and set the *subscriptionID* variable.
+
+```
+subscriptionID=$(az account show | grep id | tr -d '",' | cut -c7-)
+```
+By default this gets the guid of the current active subscription.
+
 
 ## Contributing
 
