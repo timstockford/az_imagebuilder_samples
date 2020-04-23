@@ -49,7 +49,7 @@ See [Persist files in Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/
 Once you have cloned the scripts, they should work as-is.  However you may wish to make the following customisations:
 
 #### Subscription to be used
-Modify (1-register_image_builder.sh) & (2-setup_environment.sh)
+Modify [](1-register_image_builder.sh) & [](2-setup_environment.sh)
 
 ## Contributing
 
