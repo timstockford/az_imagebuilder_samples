@@ -12,7 +12,6 @@ It is based on the samples published at [@danielsollondon/azvmimagebuilder](http
     - [Prerequisites](#prerequisites)
     - [Installing](#installing)
     - [Updating the scripts for your environment](#updating-the-scripts-for-your-environment)
-      - [Subscription to be used](#subscription-to-be-used)
   - [Contributing](#contributing)
   - [License](#license)
   - [Related Links](#related-links)
@@ -48,15 +47,31 @@ See [Persist files in Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/
 
 Once you have cloned the scripts, they should work as-is.  However you may wish to make the following customisations:
 
-#### Subscription to be used
+ - **Subscription to be used**
 
 Modify [1-register_image_builder.sh](1-register_image_builder.sh) & [2-setup_environment.sh](2-setup_environment.sh) and set the *subscriptionID* variable.
 
 ```
 subscriptionID=$(az account show | grep id | tr -d '",' | cut -c7-)
 ```
-By default this gets the guid of the current active subscription.
+This above code extracts the guid of the current active subscription, which is used by default
 
+  - Template URL's
+  
+  By default it will use the templates located in the source repo.  Modify the *templateurl* variable in [3-create-aib-customrole-template.sh](3-create-aib-customrole-template.sh) & [5-modify-aib-image-template.sh](5-modify-aib-image-template.sh).
+  ```
+templateurl=https://raw.githubusercontent.com/timstockford/az_imagebuilder_templates/master/templates/aibRoleImageCreation.json
+```
+
+ - **Resource & Image naming**
+ 
+ Most of the variables used by the scripts are contained within [2-setup_environment.sh](2-setup_environment.sh).  These can be modified as desired, and shouldn't impact any of the other scripts.
+
+ - **VM Naming**
+ The main thing to be carfeul is that if using [6-createimage.sh](6-createimage.sh) to create the VM, the virtual machine name doesn't inadvertatnly end up longer than 15 chars (otherwise the vm creation will fail).  The VM name is generated based on the template name and two random digits.  This can be adjusted by modifying the *vmName* variable 
+ ```
+vmName=$imageDefName$((10 + RANDOM % 99))
+```
 
 ## Contributing
 
