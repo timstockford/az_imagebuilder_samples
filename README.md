@@ -21,10 +21,13 @@ It is based on the samples published at [@danielsollondon/azvmimagebuilder](http
 
 ## Image Template Index
 
-Template Name | Description
-------------- | -----------
+Template Name | Description | Features 
+------------- | ----------- | --------
 aibRoleImageCreation.json | Custom role definition template
-aibTemplateSIGWinSample.json | Copy of the sample template used in [@danielsollondon/azvmimagebuilder/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json) with some modifications
+aibTemplateSIGWinSample.json | Copy of the sample template used in [@danielsollondon/azvmimagebuilder/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json) with some modifications | <ul><li>AIB will use *Standard_D4_v3* to build image</li><li>*artifactTags* added</li></ul>
+aibTemplateSIGWinBase.json | In development
+
+
  
 
 ## Getting Started
