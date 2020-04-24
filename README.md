@@ -8,17 +8,24 @@ The scripts included in this project (when executed in order) should setup the n
 It is based on the samples published at [@danielsollondon/azvmimagebuilder](https://github.com/danielsollondon/azvmimagebuilder)
 
 - [Azure ImageBuilder (AIB) Templates](#azure-imagebuilder-aib-templates)
+  - [Image Template Index](#image-template-index)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
-    - [Image Template Index](#image-template-index)
     - [Installing](#installing)
     - [Updating the scripts for your environment](#updating-the-scripts-for-your-environment)
   - [Script explaination](#script-explaination)
   - [Contributing](#contributing)
   - [License](#license)
-  - [Related Links](#related-links)
-    - [You Tube Videos](#you-tube-videos)
+  - [Azure Image Builder Related Links](#azure-image-builder-related-links)
   - [Acknowledgments](#acknowledgments)
+
+## Image Template Index
+
+Template Name | Description
+------------- | -----------
+aibRoleImageCreation.json | Custom role definition template
+aibTemplateSIGWinSample.json | Copy of the sample template used in [@danielsollondon/azvmimagebuilder/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json) with some modifications
+ 
 
 ## Getting Started
 
@@ -27,8 +34,6 @@ It is based on the samples published at [@danielsollondon/azvmimagebuilder](http
 All the scripts in this Repo are Bash Shell scripts, and can be run in Azure Cloud Shell or run on your linux distro.
 
 Note: The URL's to the Image Builder JSON templates are hardcoded to my repo, so make sure you modify the following scripts to point to your own repo:
-
-### Image Template Index
 
 ### Installing
 
@@ -87,14 +92,14 @@ Please feel free to raise an issue on Github if you have any corrections or sugg
 
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details
 
-## Related Links
+## Azure Image Builder Related Links
 
 - Azure Docs: https://aka.ms/azvmimagebuilder
 - Quick Starts: https://aka.ms/azvmimagebuilderdemos
 - End to End Solutions with Image Builder: https://aka.ms/azvmimagebuildersolns
 - Feedback: https://aka.ms/aibfeedback
 
-### You Tube Videos
+**You Tube Videos**
 - [Introduction to the Azure VM Image Builder](https://youtu.be/nalr2rHRDew)
 - [Create a Custom VM Image Pipeline with Azure VM Image Builder and Azure DevOps](https://youtu.be/lqIA0VHe5Do)
 
