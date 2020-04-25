@@ -15,7 +15,7 @@ jobs:
     steps:
       # Create target dir to hold zip file
       # because "upload artifact v1" action takes a dir as input not a single file
-      - name: build zip steps
+      # - name: build zip steps
       - uses: actions/checkout@v1
       - run: mkdir buildartifacts-zip
       - uses: montudor/action-zip@v0.1.0
