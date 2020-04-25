@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+- name: Create buildartifacts_scripts zip file
+
+on:
+ push:
+    branches: [ master ]
+    paths:
+     - 'buildartifacts/scripts/**'
+
+jobs:
+  create-buildartifacts-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: mkdir buildartifacts-zip
+      - uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r ./buildartifacts-zip/buildartifacts_scripts.zip ./buildartifacts/scripts
+      - uses: actions/upload-artifact@master
+        with:
+          name: buildartifactszip
+          path: buildartifacts-zip
+          
+  
