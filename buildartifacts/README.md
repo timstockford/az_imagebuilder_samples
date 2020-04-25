@@ -1,4 +1,4 @@
-# /buildartifacts
+# Build Artifacts
 
 Files and scripts used by the AIB templates.
 
