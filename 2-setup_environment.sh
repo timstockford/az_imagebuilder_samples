@@ -29,7 +29,8 @@ location=westeurope
 
 # name of the Image Builder template name to use
 # nb. without .json e.g. "aibTemplateSIGWin"
-aibTemplateName=aibTemplateSIGWinSample
+#aibTemplateName=aibTemplateSIGWinSample
+aibTemplateName=aibTemplateSIGWinBase
 
 # name of the shared image gallery, e.g. myCorpGallery
 sigName=${deployenv}_vmImageLibrary
@@ -37,10 +38,10 @@ sigName=${deployenv}_vmImageLibrary
 # Set image definition marketplace properties
  imageDefPublisher=HomeITWindowsServer
  imageDefOffer=2019-Datacenter
- imageDefSku=Sample
+ imageDefSku=Base
 
 # name of the image definition to be created, e.g. ProdImages
-imageDefName=win2019sample
+imageDefName=win2019base
 
 # name of the image to be created
 # imageName=aibCustomImgWini01
