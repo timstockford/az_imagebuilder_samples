@@ -31,8 +31,8 @@
                 "name": "CreateLocalBuildFolder",
                 "runElevated": true,
                 "inline": [
-                    $localbuildfolder = "$env:SystemRoot\aibBuild",
-                    New-Item -Path $localbuildfolder -ItemType directory
+                    "$localbuildfolder = $env:SystemRoot\\aibBuild",
+                    "New-Item -Path $localbuildfolder -ItemType directory"
                 ]
             },
             {
@@ -40,9 +40,9 @@
                 "name": "Install Chocolatey",
                 "runElevated": true,
                 "inline": [
-                    Set-ExecutionPolicy Bypass -Scope Process -Force,
-                    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072,
-                    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')),
+                    "Set-ExecutionPolicy Bypass -Scope Process -Force",
+                    "[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072",
+                    "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
                 ]
             },
             {
