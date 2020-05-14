@@ -28,31 +28,28 @@
         "customize": [
             {
                 "type": "PowerShell",
-                "name": "CreateBuildPath",
-                "runElevated": false,
-                "scriptUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/testPsScript.ps1"
+                "name": "CreateLocalBuildFolder",
+                "runElevated": true,
+                "inline": [
+                    $localbuildfolder = "$env:SystemRoot\aibBuild",
+                    New-Item -Path $localbuildfolder -ItemType directory
+                ]
+            },
+            {
+                "type": "PowerShell",
+                "name": "Install Chocolatey",
+                "runElevated": true,
+                "inline": [
+                    Set-ExecutionPolicy Bypass -Scope Process -Force,
+                    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072,
+                    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')),
+                ]
             },
             {
                 "type": "WindowsRestart",
-                "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM  > c:\\buildArtifacts\\azureImageBuilderRestart.txt",
+                "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM Post Package Install  > c:\\windows\\aibBuild\\aibbuildlog.txt",
                 "restartTimeout": "5m"
             },
-            {
-                "type": "File",
-                "name": "downloadBuildArtifacts",
-                "sourceUri": "https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/exampleArtifacts/buildArtifacts/index.html",
-                "destination":"c:\\buildArtifacts\\index.html"
-            },
-
-            {
-                "type": "PowerShell",
-                "name": "settingUpMgmtAgtPath",
-                "runElevated": false,
-                "inline": [
-                    "mkdir c:\\MgmtAgtPath",
-                    "echo Azure-Image-Builder-Was-Here  > c:\\MgmtAgtPath\\buildActionsOutput.txt"
-                ]
-                },
                 {
                     "type": "WindowsUpdate",
                     "searchCriteria": "IsInstalled=0",
@@ -78,7 +75,18 @@
                     "replicationRegions": [
                         "<region>"
                     ]
-                }
+                },
+                { 
+                    "type": "VHD",
+                    "runOutputName": "<runOutputName>VHD",
+                    "tags": {
+                        "imageSource": "azVmImageBuilder",
+                        "baseosimg": "windows2019",
+                        "aibTemplateSource": "<aibTemplatePath>",
+                        "aibTemplateCreation": "<date>"
+                    }
+                } 
+                
             ]
         }
     }
