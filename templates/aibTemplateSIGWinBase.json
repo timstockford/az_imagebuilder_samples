@@ -31,7 +31,7 @@
                 "name": "CreateLocalBuildFolder",
                 "runElevated": true,
                 "inline": [
-                    "$localbuildfolder = $env:SystemRoot\\aibBuild",
+                    "$localbuildfolder = \"$env:SystemRoot\\aibBuild\"",
                     "New-Item -Path $localbuildfolder -ItemType directory"
                 ]
             },

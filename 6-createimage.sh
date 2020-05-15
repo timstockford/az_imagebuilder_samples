@@ -14,7 +14,7 @@ az resource create \
 # wait approx 1-3mins, depending on external links
 
 # start the image build
-logc This will take approx 15-30 mins (varies by region)
+logc This will take approx 15-30 mins ... can vary by region
 az resource invoke-action \
      --resource-group $aibResourceGroup \
      --resource-type  Microsoft.VirtualMachineImages/imageTemplates \
