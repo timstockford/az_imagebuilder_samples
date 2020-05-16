@@ -53,7 +53,7 @@
                     "choco install googlechrome",
                     "choco install sysinternals"
                 ]
-            }
+            },
             {
                 "type": "WindowsRestart",
                 "restartCheckCommand": "$datetime=Get-Date -Format \"dd-MM-yyyy HH:mm K\" ; echo $datetime: Azure-Image-Builder-Restarted-the-VM Post Package Install  > c:\\windows\\aibBuild\\aibbuildlog.txt",
