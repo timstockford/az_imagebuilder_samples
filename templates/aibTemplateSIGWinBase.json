@@ -46,8 +46,17 @@
                 ]
             },
             {
+                "type": "PowerShell",
+                "name": "Install Packages",
+                "runElevated": true,
+                "inline":[
+                    "choco install googlechrome",
+                    "choco install sysinternals"
+                ]
+            }
+            {
                 "type": "WindowsRestart",
-                "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM Post Package Install  > c:\\windows\\aibBuild\\aibbuildlog.txt",
+                "restartCheckCommand": "$datetime=Get-Date -Format \"dd-MM-yyyy HH:mm K\" ; echo $datetime: Azure-Image-Builder-Restarted-the-VM Post Package Install  > c:\\windows\\aibBuild\\aibbuildlog.txt",
                 "restartTimeout": "5m"
             },
                 {
