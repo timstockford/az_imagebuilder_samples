@@ -36,6 +36,8 @@ az resource create \
 
 # start the image build
 logc This will take approx 15-30 mins ... can vary by region
+dt=$(date '+%d/%m/%Y %H:%M:%S');
+logc $dt
 az resource invoke-action \
      --resource-group $aibResourceGroup \
      --resource-type  Microsoft.VirtualMachineImages/imageTemplates \
